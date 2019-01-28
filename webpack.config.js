@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -51,5 +52,11 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'template.ejs',
+      appMountId: 'app-root',
+      title: 'Set Index Title Tags Here',
+      filename: resolve(__dirname, "build", "index.html"),
+    }),
   ]
 };
