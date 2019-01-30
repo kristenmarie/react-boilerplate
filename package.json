@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint src --ext js,jsx; exit 0",
+    "lint-fix": "eslint src --ext --fix; exit 0",
+    "pretest": "eslint --ignore-path .gitignore app/**/*.js"
   },
   "author": "",
   "license": "ISC",
